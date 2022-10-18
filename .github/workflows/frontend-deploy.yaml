@@ -2,7 +2,7 @@ name: Deploy Frontend
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -10,5 +10,5 @@ jobs:
     stpes:
       - uses: actions/checkout@v2
       - run: docker login -u ${{secret.DOCKER_USERNAME}} -p {{secret.DOCKER_PASSWORD}}
-      - run: docker build -t sgaikwad/react-test -f Dockerfile.dev .
-      - run: docker run -e CI=true sgaikwad/react-test npm test
+      - run: docker build -t cygnetops/react-test -f Dockerfile.dev .
+      - run: docker run -e CI=true cygnetops/react-test npm test
