@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    stpes:
+    steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{secret.DOCKER_USERNAME}} -p ${{secret.DOCKER_PASSWORD}}
       - run: docker build -t cygnetops/react-test -f Dockerfile.dev .
