@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     stpes:
       - uses: actions/checkout@v2
       - run: docker login -u ${{secret.DOCKER_USERNAME}} -p {{secret.DOCKER_PASSWORD}}
